@@ -4,7 +4,7 @@ export default () => {
     return (
         <>
             <Header />
-            <h1>Init</h1>
+            <h2>Titulo</h2>
         </>
     );
 };
