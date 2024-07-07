@@ -1,7 +1,8 @@
 export default () => {
     return (
         <>
-            <h2>game</h2>
+            <div className="player">P</div>
+            <div className="monster player">M</div>
         </>
     );
 };

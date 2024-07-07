@@ -48,10 +48,31 @@ body {
     padding: 5px;
 }
 
+.form-btn {
+    padding: 10px 5rem !important;
+}
+
 /* css app principal */
 .center-main {
     height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* game css*/
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.monster {
+    background-color: blue;
 }
