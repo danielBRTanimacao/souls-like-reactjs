@@ -13,3 +13,45 @@
 body {
     background-color: var(--bg-principal-color);
 }
+
+/* text and typhography */
+.display-title {
+    font-size: 4rem !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.fs-bold {
+    font-weight: 600;
+}
+
+/* colunas */
+.row {
+    display: grid;
+}
+
+.col {
+    padding: 1rem;
+}
+
+/* button modificados */
+.btn {
+    text-decoration: none;
+    padding: 5px;
+}
+
+.btn:hover {
+    border: 1px solid var(--white-color);
+    border-radius: 1rem;
+    padding: 5px;
+}
+
+/* css app principal */
+.center-main {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
