@@ -38,11 +38,13 @@ body {
 
 /* button modificados */
 .btn {
+    border: none;
     text-decoration: none;
     padding: 5px;
 }
 
 .btn:hover {
+    cursor: pointer;
     border: 1px solid var(--white-color);
     border-radius: 1rem;
     padding: 5px;
@@ -50,6 +52,46 @@ body {
 
 .form-btn {
     padding: 10px 5rem !important;
+}
+
+/* Container */
+.container {
+    margin: 0 5rem;
+}
+
+/*navigation */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content li {
+    padding-top: 6px;
+}
+
+.dropbtn {
+    background-color: var(--bg-principal-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* css app principal */
