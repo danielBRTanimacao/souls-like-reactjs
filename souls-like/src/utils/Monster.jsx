@@ -1,9 +1,7 @@
-import Player from "./utils/Player";
-
 export default () => {
     return (
         <>
-            <Player />
+            <div className="monster player">M</div>
         </>
     );
 };
