@@ -1,11 +1,11 @@
 export default () => {
-    function movePlayer() {
-        console.log("movimento");
+    function movePlayer(e) {
+        console.log(e);
     }
 
     return (
         <>
-            <div id="playerAction" className="player">
+            <div className="player" onClick={(e) => movePlayer(e)}>
                 <span hidden>Player</span>
             </div>
         </>
