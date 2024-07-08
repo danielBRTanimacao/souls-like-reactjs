@@ -1,7 +1,13 @@
 export default () => {
+    function movePlayer() {
+        console.log("movimento");
+    }
+
     return (
         <>
-            <div className="player">P</div>
+            <div id="playerAction" className="player">
+                <span hidden>Player</span>
+            </div>
         </>
     );
 };

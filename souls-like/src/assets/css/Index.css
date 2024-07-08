@@ -119,6 +119,13 @@ body {
 }
 
 /* game css*/
+.maingame {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .player {
     display: flex;
     justify-content: center;
