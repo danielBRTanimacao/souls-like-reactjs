@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Darker+Grotesque:wght@300..900&display=swap");
+
 :root {
     --bg-principal-color: #121317;
     --white-color: rgb(248, 248, 248);
+    --white-color-transparent: rgba(248, 248, 248, 0.5);
 }
 
 * {
@@ -17,6 +20,10 @@ body {
 /* text and typhography */
 .display-title {
     font-size: 4rem !important;
+    font-family: "Baskervville SC", serif !important;
+    font-optical-sizing: auto;
+    font-weight: 900px;
+    font-style: normal;
 }
 
 .text-center {
@@ -75,39 +82,23 @@ body {
     padding: 0.2rem 0.8rem !important;
 }
 
-/*navigation */
+/*navigation dropdown */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
     list-style: none;
-    margin: 0;
-    padding: 8px 0;
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    z-index: 1;
 }
 
-.dropdown-content li {
-    padding-top: 6px;
+.nav-item a {
+    font-weight: 150;
+    padding: 0 10px;
+    text-decoration: none;
+    color: var(--white-color-transparent);
 }
 
-.dropbtn {
-    background-color: var(--bg-principal-color);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+.nav-item a:hover {
+    color: var(--white-color);
 }
 
 /* css app principal */
@@ -140,4 +131,10 @@ body {
 
 .monster {
     background-color: blue;
+}
+
+@media (max-width: 767.98px) {
+    .container {
+        margin: 0 2rem;
+    }
 }
