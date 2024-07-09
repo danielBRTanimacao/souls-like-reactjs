@@ -1,4 +1,4 @@
-import Player from "./utils/Player";
+import Player from "./components/player/Player";
 
 export default () => {
     return (
