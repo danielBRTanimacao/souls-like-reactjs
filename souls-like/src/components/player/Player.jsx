@@ -1,36 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default () => {
-    const initialsPositions = {
-        x: 250,
-        y: 250
-    };
-    const [statePos, setstatePos] = useState(initialsPositions);
+    const [statePos, setstatePos] = useState({ x: 0, y: 0 });
 
-    const maxScreenWidth = window.innerWidth;
+    // const maxScreenWidth = window.innerWidth;
 
-    window.addEventListener("keydown", (event) => {
-        // let eventsList = ["w", "s", "d", "a"];
-        console.log(event.key, statePos);
-
-        if (event.key === "w") {
-            setstatePos({ x: statePos.x + 20, y: statePos.y });
-        } else if (event.key === "s") {
-            setstatePos({ x: statePos.x - 20, y: statePos.y });
-        } else if (event.key === "d") {
-            setstatePos({ x: statePos.x, y: statePos.y + 20 });
-        } else if (event.key === "a") {
-            setstatePos({ x: statePos.x, y: statePos.y - 20 });
+    const movePlayer = (event) => {
+        switch (event.key) {
+            case "w":
+                setstatePos((prev) => ({ ...prev, x: prev.x + 10 }));
+                break;
+            case "a":
+                setstatePos((prev) => ({ ...prev, y: prev.y - 10 }));
+                break;
+            case "s":
+                setstatePos((prev) => ({ ...prev, x: prev.x - 10 }));
+                break;
+            case "d":
+                setstatePos((prev) => ({ ...prev, y: prev.y + 10 }));
+                break;
+            default:
+                break;
         }
-    });
+    };
+
+    useEffect(() => {
+        window.addEventListener("keydown", movePlayer);
+        return () => {
+            window.removeEventListener("keydown", movePlayer);
+        };
+    }, []);
+
+    console.log(statePos);
 
     return (
         <>
             <div
                 style={{
-                    position: "absolute",
-                    bottom: `${initialsPositions.x}px`,
-                    left: `${initialsPositions.y}px`,
+                    position: "relative",
+                    bottom: `${statePos.x}px`,
+                    left: `${statePos.y}px`,
                     width: "60px",
                     height: "60px",
                     backgroundColor: "red",
