@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import playerSprite from "../../assets/player-sprite/red_character.png";
 
 export default () => {
     const [statePos, setstatePos] = useState({ x: 0, y: 0 });
@@ -43,7 +44,8 @@ export default () => {
                     width: "60px",
                     height: "60px",
                     backgroundColor: "red",
-                    borderRadius: "100%"
+                    borderRadius: "100%",
+                    backgroundImage: `url(${playerSprite})`
                 }}
             >
                 <span hidden>Player</span>

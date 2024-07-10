@@ -116,22 +116,21 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.player {
+/* mOnster edited*/
+.monster {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 60px;
     height: 60px;
-    background-color: red;
+    background-color: blue;
     border-radius: 100%;
     cursor: pointer;
 }
-
-.monster {
-    background-color: blue;
-}
+/* 
+@keyframes identifier {
+    
+} */
 
 @media (max-width: 767.98px) {
     .container {
