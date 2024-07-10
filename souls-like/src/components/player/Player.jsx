@@ -8,15 +8,34 @@ export default () => {
     const maxScreenWidth = window.innerWidth;
 
     addEventListener("keydown", (event) => {
+        let eventsList = ["w", "s", "d", "a"];
+
+        console.log(topPos);
+        console.log(leftPos);
         if (event.key == "w") {
-            settopPos((pos) => (pos += 1));
-            // settopPos(Math.floor(Math.random() * (200 - -200 + 1)) + -200);
+            settopPos((pos) => pos + 1);
+            if (topPos > maxScreenWidth || leftPos > maxScreenWidth) {
+                setleftPos(0);
+                settopPos(0);
+            }
         } else if (event.key == "s") {
-            settopPos((pos) => (pos -= 1));
+            settopPos((pos) => pos - 1);
+            if (topPos > maxScreenWidth || leftPos > maxScreenWidth) {
+                setleftPos(0);
+                settopPos(0);
+            }
         } else if (event.key == "d") {
-            setleftPos((pos) => (pos += 1));
+            setleftPos((pos) => pos + 1);
+            if (topPos > maxScreenWidth || leftPos > maxScreenWidth) {
+                setleftPos(0);
+                settopPos(0);
+            }
         } else if (event.key == "a") {
-            setleftPos((pos) => (pos -= 1));
+            setleftPos((pos) => pos - 1);
+            if (topPos > maxScreenWidth || leftPos > maxScreenWidth) {
+                setleftPos(0);
+                settopPos(0);
+            }
         }
     });
 
