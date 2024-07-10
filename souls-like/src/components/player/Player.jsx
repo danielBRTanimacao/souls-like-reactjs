@@ -1,41 +1,26 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default () => {
-    const [topPos, settopPos] = useState(0);
-    const [leftPos, setleftPos] = useState(0);
+    const initialsPositions = {
+        x: 250,
+        y: 250
+    };
+    const [statePos, setstatePos] = useState(initialsPositions);
 
     const maxScreenWidth = window.innerWidth;
 
-    addEventListener("keydown", (event) => {
-        let eventsList = ["w", "s", "d", "a"];
+    window.addEventListener("keydown", (event) => {
+        // let eventsList = ["w", "s", "d", "a"];
+        console.log(event.key, statePos);
 
-        console.log(topPos);
-        console.log(leftPos);
-        if (event.key == "w") {
-            settopPos((pos) => pos + 1);
-            if (topPos > maxScreenWidth || leftPos > maxScreenWidth) {
-                setleftPos(0);
-                settopPos(0);
-            }
-        } else if (event.key == "s") {
-            settopPos((pos) => pos - 1);
-            if (topPos > maxScreenWidth || leftPos > maxScreenWidth) {
-                setleftPos(0);
-                settopPos(0);
-            }
-        } else if (event.key == "d") {
-            setleftPos((pos) => pos + 1);
-            if (topPos > maxScreenWidth || leftPos > maxScreenWidth) {
-                setleftPos(0);
-                settopPos(0);
-            }
-        } else if (event.key == "a") {
-            setleftPos((pos) => pos - 1);
-            if (topPos > maxScreenWidth || leftPos > maxScreenWidth) {
-                setleftPos(0);
-                settopPos(0);
-            }
+        if (event.key === "w") {
+            setstatePos({ x: statePos.x + 20, y: statePos.y });
+        } else if (event.key === "s") {
+            setstatePos({ x: statePos.x - 20, y: statePos.y });
+        } else if (event.key === "d") {
+            setstatePos({ x: statePos.x, y: statePos.y + 20 });
+        } else if (event.key === "a") {
+            setstatePos({ x: statePos.x, y: statePos.y - 20 });
         }
     });
 
@@ -43,17 +28,13 @@ export default () => {
         <>
             <div
                 style={{
-                    position: "relative",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    top: `${topPos}px`,
-                    left: `${leftPos}px`,
+                    position: "absolute",
+                    bottom: `${initialsPositions.x}px`,
+                    left: `${initialsPositions.y}px`,
                     width: "60px",
                     height: "60px",
                     backgroundColor: "red",
-                    borderRadius: "100%",
-                    cursor: "pointer"
+                    borderRadius: "100%"
                 }}
             >
                 <span hidden>Player</span>
