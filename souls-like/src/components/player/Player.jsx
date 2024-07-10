@@ -12,7 +12,6 @@ export default () => {
     return (
         <>
             <div
-                // className="player"
                 onClick={(e) => movePlayer(e)}
                 style={{
                     position: "relative",
