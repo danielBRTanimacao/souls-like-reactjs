@@ -8,7 +8,7 @@ export default () => {
                 <article className="row text-center">
                     <h1 className="display-title">Souls Like ReactJs</h1>
                     <div className="col">
-                        <a href="/game/" className="btn fs-bold form-btn">
+                        <a href={"/game/"} className="btn fs-bold form-btn">
                             JOGAR
                         </a>
                     </div>
