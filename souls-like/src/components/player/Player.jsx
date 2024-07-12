@@ -1,38 +1,26 @@
 import React, { useState, useEffect } from "react";
-import playerSprite from "../../assets/player-sprite/red_character.png";
 
 export default () => {
     const [statePos, setstatePos] = useState({ x: 0, y: 0 });
 
     // const maxScreenWidth = window.innerWidth;
 
-    const movePlayer = (event) => {
-        switch (event.key) {
-            case "w":
-                setstatePos((prev) => ({ ...prev, x: prev.x + 10 }));
-                break;
-            case "a":
-                setstatePos((prev) => ({ ...prev, y: prev.y - 10 }));
-                break;
-            case "s":
-                setstatePos((prev) => ({ ...prev, x: prev.x - 10 }));
-                break;
-            case "d":
-                setstatePos((prev) => ({ ...prev, y: prev.y + 10 }));
-                break;
-            default:
-                break;
-        }
-    };
-
     useEffect(() => {
-        window.addEventListener("keydown", movePlayer);
-        return () => {
-            window.removeEventListener("keydown", movePlayer);
-        };
+        window.addEventListener("keydown", (event) => {
+            if (event.key == "w") {
+                setstatePos((prev) => ({ ...prev, x: prev.x + 10 }));
+            }
+            if (event.key == "a") {
+                setstatePos((prev) => ({ ...prev, y: prev.y - 10 }));
+            }
+            if (event.key == "s") {
+                setstatePos((prev) => ({ ...prev, x: prev.x - 10 }));
+            }
+            if (event.key == "d") {
+                setstatePos((prev) => ({ ...prev, y: prev.y + 10 }));
+            }
+        });
     }, []);
-
-    console.log(statePos);
 
     return (
         <>
@@ -44,8 +32,7 @@ export default () => {
                     width: "60px",
                     height: "60px",
                     backgroundColor: "red",
-                    borderRadius: "100%",
-                    backgroundImage: `url(${playerSprite})`
+                    borderRadius: "100%"
                 }}
             >
                 <span hidden>Player</span>
