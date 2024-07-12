@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import { Link } from "react-router-dom";
 
 export default () => {
     return (
@@ -8,9 +9,9 @@ export default () => {
                 <article className="row text-center">
                     <h1 className="display-title">Souls Like ReactJs</h1>
                     <div className="col">
-                        <a href={"/game/"} className="btn fs-bold form-btn">
+                        <Link className="btn fs-bold form-btn" to={"/game"}>
                             JOGAR
-                        </a>
+                        </Link>
                     </div>
                     <div className="col">
                         <a href="#" className="btn fs-bold form-btn">
