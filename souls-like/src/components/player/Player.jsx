@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Knight from "../../assets/player-sprite/knight-idle.png";
 
 export default () => {
     const [statePos, setstatePos] = useState({ x: 0, y: 0 });
@@ -32,7 +33,8 @@ export default () => {
                     width: "60px",
                     height: "60px",
                     backgroundColor: "red",
-                    borderRadius: "100%"
+                    borderRadius: "100%",
+                    background: `url(${Knight}) no-repeat center`
                 }}
             >
                 <span hidden>Player</span>
