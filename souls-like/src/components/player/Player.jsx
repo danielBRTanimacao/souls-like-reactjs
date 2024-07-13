@@ -49,7 +49,6 @@ export default () => {
                     style={{ width: "60px", transform: `scaleX(${invertImg})` }}
                     alt="img-knight"
                 />
-                <span hidden>Player</span>
             </div>
         </>
     );
