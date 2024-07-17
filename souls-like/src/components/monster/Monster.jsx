@@ -7,6 +7,12 @@ export default () => {
     const [invertImg, setInvertImg] = useState("1");
     const [statePos, setstatePos] = useState({ x: 90, y: 90 });
 
+    window.addEventListener("load", (event) => {
+        console.log("move");
+        setstatePos({ x: 90, y: 100 });
+        setImgVariant(MonsterIdle);
+    });
+
     return (
         <>
             <div
