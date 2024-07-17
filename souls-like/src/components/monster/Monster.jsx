@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-import MonsterIdle from "../../assets/player-sprite/knight-idle.png";
+import MonsterIdle from "../../assets/monster-sprite/monster-idle.png";
 
 export default () => {
     const [imgVariant, setImgVariant] = useState(MonsterIdle);
@@ -15,7 +15,8 @@ export default () => {
                     bottom: `${statePos.x}px`,
                     left: `${statePos.y}px`,
                     width: "60px",
-                    height: "60px"
+                    height: "60px",
+                    imageRendering: "pixelated"
                 }}
             >
                 <img

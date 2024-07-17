@@ -41,7 +41,8 @@ export default () => {
                     bottom: `${statePos.x}px`,
                     left: `${statePos.y}px`,
                     width: "60px",
-                    height: "60px"
+                    height: "60px",
+                    imageRendering: "pixelated"
                 }}
             >
                 <img
